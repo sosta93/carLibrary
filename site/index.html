@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header"><h1>Welcome to my Mercedes Benz Album</h1></div>
+    <section>
+        <ul>
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="S-Class">S-Class</li>
+            <li class="list" data-filter="E-Class">E-Class</li>
+            <li class="list" data-filter="A-Class">A-Class</li>
+            <li class="list" data-filter="G-Class">G-Class</li>
+            <li class="list" data-filter="GT-Class">AMG GT</li>
+        </ul>
+        <div class="product">
+            <div class="itemBox S-Class"><img src="images/merSclass2020.jpeg"></div>
+            <div class="itemBox E-Class"><img src="images/merEclass2020.jpeg"></div>
+            <div class="itemBox A-Class"><img src="images/merAclass2020.jpg"></div>
+            <div class="itemBox G-Class"><img src="images/merGclass2020.jpeg"></div>
+            <div class="itemBox GT-Class"><img src="images/merAmgGt2020.jpg"></div>
+            <div class="itemBox S-Class"><img src="images/merSclass2015.jpg"></div>
+            <div class="itemBox E-Class"><img src="images/merEclass2015.jpg"></div>
+            <div class="itemBox A-Class"><img src="images/merAclass2015.jpg"></div>
+            <div class="itemBox G-Class"><img src="images/merGclass2015.jpg"></div>
+            <div class="itemBox GT-Class"><img src="images/merAmgGt2015.jpg"></div>       
+            <div class="itemBox S-Class"><img src="images/merSclass2010.jpg"></div>
+            <div class="itemBox E-Class"><img src="images/merEclass2010.jpg"></div>
+            <div class="itemBox G-Class"><img src="images/merGclass2010.jpg"></div>
+            <div class="itemBox GT-Class"><img src="images/merAmgGt2010.jpg"></div> 
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous">
+    </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('.list').click(function(){
+            const value = $(this).attr('data-filter');
+            if (value == 'all'){
+                $('.itemBox').show('1000');
+            } 
+            else {
+                $('.itemBox').not('.'+value).hide('1000');
+                $('.itemBox').filter('.'+value).show('1000');
+            }
+        })
+        // add active class on selected item
+
+        $('.list').click(function(){
+            $(this).addClass('active').siblings().removeClass('active');
+        })
+    })  
+  </script>
+</body>
+</html>
